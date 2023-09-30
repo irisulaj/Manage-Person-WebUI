@@ -1,0 +1,85 @@
+﻿@model List<ManagePersonWebUI.Models.PersonViewModel>
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+             Name
+            </th>
+            <th>
+                Surname
+            </th>
+            <th>
+                Date of Birth
+            </th>
+            <th>
+                Phone
+            </th>
+            <th>
+               Gender
+            </th>
+            <th>
+                Is Employed
+            </th>
+            <th>
+                Marital Status
+            </th>
+            <th>
+               Place of Birth
+            </th>
+            <th>
+               Update
+            </th>
+            <th>
+                Delete
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ToList()) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPerson)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateofBirth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsEmployed)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdMaritalstatus)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlaceofBirth)
+                </td>
+            <td>
+                    <a asp-action="Edit" asp-router-data="@item" asp-route-id="@item.IdPerson" class="btn btn-warning">Edit</a> 
+            </td>
+            <td>
+                    <a asp-action="Delete" asp-route-id="@item.IdPerson" class="btn btn-danger">Delete</a>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
