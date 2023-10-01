@@ -12,7 +12,7 @@ namespace ManagePersonWebUI.Models
 
         public DateTime? DateofBirth { get; set; }
 
-        public int? Phone { get; set; }
+        public string? Phone { get; set; }
 
         public string Gender { get; set; }
 
